@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue 2.0的双向绑定的简单实现</title>
+  </head>
+  <body>
+    <!-- 数据劫持+发布订阅模式   不兼容IE8及其以下 -->
+    <div id="app">{{name}}</div>
+    <input type="text" v-model="name" />
+    {{hello}}
+    <!-- <input type="text">
+    <p id="pId"></p> -->
+
+    <script src="mvvm.js"></script>
+    <script>
+      let vue = new Vue({
+        el: "#app",
+        data: {
+          name: "hrx",
+          age: '20',
+        },
+        computed: {
+          hello() {
+            return this.name + this.age;
+          },
+        },
+      });
+
+      // let data = {};
+      // Object.defineProperty(data, 'data', {
+      //     configurable: false, // 不能被覆盖或者删除 true时可被删除
+      //     enumerable: true, // 可枚举
+
+      //     get: function(){
+      //         return 'data';
+      //     },
+      //     set: function(_r){
+      //         console.log(_r);
+      //         document.querySelector("#pId").innerHTML = _r;
+      //     }
+      // });
+
+      // document.addEventListener('keyup', function(event){
+      //     data.data = event.target.value;
+      // });
+    </script>
+  </body>
+</html>
