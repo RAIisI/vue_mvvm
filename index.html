@@ -7,9 +7,12 @@
   </head>
   <body>
     <!-- 数据劫持+发布订阅模式   不兼容IE8及其以下 -->
-    <div id="app">{{name}}</div>
-    <input type="text" v-model="name" />
-    {{hello}}
+    <div id="app">
+      <div>{{name}}</div>
+      <input type="text" v-model="name" />
+      {{hello}}
+    </div>
+
     <!-- <input type="text">
     <p id="pId"></p> -->
 
@@ -19,7 +22,7 @@
         el: "#app",
         data: {
           name: "hrx",
-          age: '20',
+          age: "20",
         },
         computed: {
           hello() {

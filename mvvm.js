@@ -38,7 +38,7 @@ function initComputed(){
 function Compile(el, vm) {
   vm.$el = document.querySelector(el);
   let fragment = document.createDocumentFragment();
-  while ((child = vm.$el.firstChild)) {
+  while (child = vm.$el.firstChild) {
     // 将app中的内容移入内存中
     fragment.appendChild(child);
   }
